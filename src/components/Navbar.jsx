@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import Drawer from "./Drawer";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -165,6 +166,7 @@ export default function Header() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
+            <Drawer />
             <MenuIcon />
           </IconButton>
           <Typography
