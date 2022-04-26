@@ -1,11 +1,26 @@
-import "./App.css";
+import Main from "./Main";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+
+const AppWrapper = () => {
+  let routes = useRoutes([
+    {
+      path: "/",
+      element: <Main />,
+    },
+    {
+      path: "/about",
+      element: <div>About!</div>,
+    },
+  ]);
+  return routes;
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World</h1>
-      </header>
+      <Router>
+        <AppWrapper />
+      </Router>
     </div>
   );
 }
