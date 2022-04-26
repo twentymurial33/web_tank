@@ -1,4 +1,5 @@
 import Main from "./Main";
+import About from "./About";
 import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 
 const AppWrapper = () => {
@@ -9,7 +10,7 @@ const AppWrapper = () => {
     },
     {
       path: "/about",
-      element: <div>About!</div>,
+      element: <About />,
     },
   ]);
   return routes;
