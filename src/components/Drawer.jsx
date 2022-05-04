@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export default function FixedDrawer() {
   const [state, setState] = React.useState({
-    left: false,
+    // left: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -35,17 +35,18 @@ export default function FixedDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Home", "Network", "History", "About"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <Link to="/Network">Network</Link>
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -54,7 +55,7 @@ export default function FixedDrawer() {
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
 
