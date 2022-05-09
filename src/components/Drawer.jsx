@@ -6,14 +6,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
 
 export default function FixedDrawer() {
-  const [state, setState] = React.useState({
-    // left: false,
-  });
+  const [state, setState] = React.useState({});
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -34,15 +30,14 @@ export default function FixedDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Home", "Network", "History", "About"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              <Link to="/Network">Network</Link>
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <Link to="/network">Network</Link>
+            <Link to="/history">Network</Link>
+            <Link to="/about">Network</Link>
+          </ListItemIcon>
+          <ListItemText />
+        </ListItem>
       </List>
     </Box>
   );
